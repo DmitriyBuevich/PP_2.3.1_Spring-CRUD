@@ -17,13 +17,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
+    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
     }
 
     @Override
-    @Transactional
+    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     public User getUserById(long id) {
         return userDao.getUserById(id);
     }
